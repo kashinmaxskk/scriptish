@@ -516,7 +516,6 @@ Script.prototype = {
     var newPriority = newScript.priority;
 
     // Copy new values.
-    this.blocked = newScript.blocked;
     this.updateAvailable = false;
     this.domains = newScript.domains;
     this._includes = newScript._includes;
@@ -988,8 +987,6 @@ Script.parse = function Script_parse(aConfig, aSource, aURI, aUpdateScript) {
     script._namespace = aURI.host;
   if (!script._description) script._description = "";
   if (!script._version) script._version = "";
-
-  script.doBlockCheck();
 
   return script;
 };
